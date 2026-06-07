@@ -1,0 +1,16 @@
+-- ============================================================
+-- Migration v3 - MAY-IT Améliorations
+-- ============================================================
+-- Aucune modification de schéma requise.
+-- Les nouvelles fonctionnalités utilisent les tables existantes :
+--   - resultat_quiz  → stats quiz moniteur + admin
+--   - candidat + formule → factures admin
+--   - lecon          → mes-eleves moniteur + modifier planning admin
+--
+-- Assurez-vous que la table resultat_quiz existe (migration_v2.sql)
+-- et que quelques résultats de quiz ont été enregistrés pour tester.
+--
+-- Données de test optionnelles (quiz results) :
+-- INSERT INTO resultat_quiz (idcandidat, date_quiz, score, total_questions, temps_total)
+-- SELECT idcandidat, NOW() - INTERVAL FLOOR(RAND()*30) DAY, FLOOR(RAND()*11), 10, FLOOR(RAND()*300)+60
+-- FROM candidat LIMIT 5;
